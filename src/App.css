@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 1100px;
+  max-width: 1220px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background-color: black;
+  padding: 20px;
   color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.header h1 {
+  margin: 0;
+  color:rgb(255, 230, 6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Main content */
+.content {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+
+.editor-container {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.editor {
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: #f8f8f8;
+  resize: vertical;
+}
+
+.preview-container {
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f8f8f8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  height: 400px;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .editor-container, .preview-container {
+    width: 100%;
+    padding-right: 0;
   }
 }
